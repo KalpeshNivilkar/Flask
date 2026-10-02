@@ -8,26 +8,16 @@
 </head>
 
 <body>
-    {# this is single if statement #}
-    <!-- {% if is_logged_in %}
-    <h1>Welcome back!</h1>
-    {% endif %} -->
-    
-    <!-- {% if is_logged_in %}
-    <h1>Welcome back!</h1>
-    {% else %}
-    <h1>Sing up / login </h1>
-    {% endif %}  -->
+    <ul>
+    <!-- for loop -->
+    <h1>Courses</h1>
+    {% for course in courses %}
+    <li>{{course}}</li>
+    {% endfor %}
+    </ul>
 
-    {% if marks >= 90 %}
-    <h1>Grade = A</h1>
-    {% elif marks >= 70 %}
-    <h1>Grade = B</h1>
-    {% else %}
-    <h1>Grade = C </h1>
-    {% endif %}
-    
-    <h1>{{kalpesh | upper}}</h1>
+
+
 
 </body>
 
