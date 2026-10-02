@@ -4,13 +4,12 @@ from flask import Flask, render_template
 app = Flask(__name__)
 @app.route('/')
 def home():
-    name = "kalpesh"
-    city = "pune"
-    age = 23
+    is_logged_in = True
+    marks = 70
     return render_template("index.html",
-                           name =name,
-                           city = city,
-                           age= age)
+                           is_logged_in = is_logged_in,
+                           marks =marks)
+    
 
 if __name__ == '__main__':
     app.run(debug=True)

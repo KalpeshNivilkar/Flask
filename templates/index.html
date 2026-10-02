@@ -1,15 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home-page</title>
 </head>
+
 <body>
-    <h1>Wlcome to home page</h1>
-    <h4>this is my first html page</h4>
-    <p>My name is {{name}}</p>
-    <p>I am belongs from {{Pune}}</p>
-    <p>I am {{age}} years old</p>
+    {# this is single if statement #}
+    <!-- {% if is_logged_in %}
+    <h1>Welcome back!</h1>
+    {% endif %} -->
+    
+    <!-- {% if is_logged_in %}
+    <h1>Welcome back!</h1>
+    {% else %}
+    <h1>Sing up / login </h1>
+    {% endif %}  -->
+
+    {% if marks >= 90 %}
+    <h1>Grade = A</h1>
+    {% elif marks >= 70 %}
+    <h1>Grade = B</h1>
+    {% else %}
+    <h1>Grade = C </h1>
+    {% endif %}
+    
+    <h1>{{kalpesh | upper}}</h1>
+
 </body>
+
 </html>
