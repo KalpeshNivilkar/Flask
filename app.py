@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 from uuid import UUID
 
 app = Flask(__name__)
@@ -28,7 +28,7 @@ def student_info(name,course):
 
 # URL convertor 
 # int convertor
-@app.route('/product/<int:id>')
+'''@app.route('/product/<int:id>')
 def product(id):
     return f"product id is: {id}"
 
@@ -50,7 +50,20 @@ def website_link(file_path):
 #  UUID
 @app.route('/unique/<uuid:user_id>')
 def unique(user_id):
-    return f"this is unique id:{user_id}"
+    return f"this is unique id:{user_id}"'''
+
+# Query parameter
+@app.route('/search')
+def search():
+    name = request.args.get("name","geust")
+    return f"hello {name}"
+
+# multiple query parameters
+@app.route('/multiple')
+def multiple():
+    name = request.args.get("name","guest")
+    course = request.args.get("course", "unknown")
+    return f"{name} is learning {course}"
 
 if __name__ == '__main__':
     app.run(debug=True)
